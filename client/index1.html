@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Stripe Checkout - TFS</title>
+    <meta name="description" content="A demo of Stripe Payment Intents" />
+
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon" /> -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <!-- Load Stripe.js on your website. -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="togethere-background"></div>
+    <div class="sr-root">
+      <div class="sr-main">
+        <header class="sr-header">
+          <div class="sr-header__logo"></div>
+        </header>
+        <h1>Choose a subscription plan</h1>
+
+        <div class="price-table-container">
+          <section>
+            <img
+              src="/img/truck1.jpg"
+              width="340"
+              height="200"
+            />
+            <div class="name">Trucking From Scratch monthly</div>
+            <div class="price">$97</div>
+            <div class="duration">per month</div>
+
+            <!-- <p class="name">Feature 1*</p>
+            <p class="name">Feature 2*</p>
+            <p class="name">Feature 3*</p>
+            <p class="name">Feature 4*</p> -->
+            <button id="basic-monthly-plan-btn">Select</button>
+          </section>
+          <section>
+            <img
+              src="/img/truck2.jpg"
+              width="340"
+              height="200"
+            />
+            <div class="name">Trucking from Scratch annually</div>
+            <div class="price">$970</div>
+            <div class="duration">per year</div>
+            <!-- <p class="name">($500 savings)</p>
+            <p class="name">1 User</p>
+            <p class="name">Full functionality</p>
+            <p class="name">1 GB of storage</p>
+            <p class="name">Hosting, maintenance, and support</p> -->
+            <button id="pro-monthly-plan-btn">Select</button>
+          </section>
+</div>
+<div class="price-table-container">
+
+          <section>
+            <img
+              src="/img/truck2.jpg"
+              width="340"
+              height="200"
+            />
+            <div class="name">Trucking from Scratch annually</div>
+            <div class="price">$970</div>
+            <div class="duration">per year</div>
+            <!-- <p class="name">($500 savings)</p>
+            <p class="name">1 User</p>
+            <p class="name">Full functionality</p>
+            <p class="name">1 GB of storage</p>
+            <p class="name">Hosting, maintenance, and support</p> -->
+            <button id="pro-monthly-plan-btn">Select</button>
+          </section>
+
+          <section>
+            <img
+              src="/img/truck2.jpg"
+              width="340"
+              height="200"
+            />
+            <div class="name">Trucking from Scratch annually</div>
+            <div class="price">$970</div>
+            <div class="duration">per year</div>
+            <!-- <p class="name">($500 savings)</p>
+            <p class="name">1 User</p>
+            <p class="name">Full functionality</p>
+            <p class="name">1 GB of storage</p>
+            <p class="name">Hosting, maintenance, and support</p> -->
+            <button id="pro-monthly-plan-btn">Select</button>
+          </section>
+          <!-- <section>
+            <img
+              src="/img/truck2.jpg"
+              width="340"
+              height="200"
+            />
+            <div class="name">For-Users</div>
+            <div class="price">$1000</div>
+            <div class="duration">per month</div>
+            <p class="name">Five users (for the price of four)</p>
+            <p class="name">Cross-user interoperability</p>
+            <p class="name">Full functionality</p>
+            <p class="name">7 GB of storage</p>
+            <p class="name">Contact Us, and support</p>
+            <button id="pro-plan-btn"><a href="dmcgill@mcgillcfo.com" target="_blank">Contact Us</a></button>
+          </section> -->
+        </div>
+      </div>
+    </div>
+    <div id="error-message" class="error-message"></div>
+  </body>
+</html>
