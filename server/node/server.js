@@ -119,43 +119,43 @@ app.post("/customer-portal", async (req, res) => {
   });
 });
 
-app.post("/subscription-info", async (req, res) => {
-  const { sessionId } = req.body;
-  const checkoutsession = await stripe.checkout.sessions.retrieve(sessionId);
+// app.post("/subscription-info", async (req, res) => {
+//   const { sessionId } = req.body;
+//   const checkoutsession = await stripe.checkout.sessions.retrieve(sessionId);
 
-  const subscriptionInfo = await stripe.subscriptions.retrieve(
-    checkoutsession.subscription
-  );
+//   const subscriptionInfo = await stripe.subscriptions.retrieve(
+//     checkoutsession.subscription
+//   );
 
-  const { id, created, customer, status, current_period_end } =
-    subscriptionInfo;
+//   const { id, created, customer, status, current_period_end } =
+//     subscriptionInfo;
 
-  const current_period_start = created * 1000;
-  const current_period_ending = current_period_end * 1000;
+//   const current_period_start = created * 1000;
+//   const current_period_ending = current_period_end * 1000;
 
-  const startDateObject = new Date(current_period_start);
-  const endDateObject = new Date(current_period_ending);
+//   const startDateObject = new Date(current_period_start);
+//   const endDateObject = new Date(current_period_ending);
 
-  const created_date = startDateObject.toLocaleString(); //2019-12-9 10:30:15
-  const end_date = endDateObject.toLocaleString(); //2019-12-9 10:30:15
+//   const created_date = startDateObject.toLocaleString(); //2019-12-9 10:30:15
+//   const end_date = endDateObject.toLocaleString(); //2019-12-9 10:30:15
 
-  const customerInfo = await stripe.customers.retrieve(customer);
-  console.log("subscription details ===>", subscriptionInfo);
+//   const customerInfo = await stripe.customers.retrieve(customer);
+//   console.log("subscription details ===>", subscriptionInfo);
 
-  res.send({
-    url: subscriptionInfo,
-    // subscription_details: {
-    //   subscription_Id: id,
-    //   customer_Id: customer,
-    //   customer_email: customerInfo.email,
-    //   product_id: subscriptionInfo.plan.product,
-    //   status: status,
-    //   purchase_date: created_date,
-    //   expiration_date: end_date,
-    //   url: subscriptionInfo,
-    // },
-  });
-});
+//   res.send({
+//     url: subscriptionInfo,
+//     // subscription_details: {
+//     //   subscription_Id: id,
+//     //   customer_Id: customer,
+//     //   customer_email: customerInfo.email,
+//     //   product_id: subscriptionInfo.plan.product,
+//     //   status: status,
+//     //   purchase_date: created_date,
+//     //   expiration_date: end_date,
+//     //   url: subscriptionInfo,
+//     // },
+//   });
+// });
 
 app.listen(PORT, () =>
   console.log(`Node server listening at http://localhost:${PORT}/`)

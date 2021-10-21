@@ -19,4 +19,4 @@ npm install
 npm start
 ```
 
-3. Go to `localhost:4242` to see the demo
+3. Go to `localhost:3000` to see the demo

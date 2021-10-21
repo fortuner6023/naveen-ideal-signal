@@ -18,7 +18,6 @@ if (sessionId) {
     });
 
   const manageBillingForm = document.querySelector("#manage-billing-form");
-  // const manageSubscription = document.querySelector("#show-subscription-info");
 
   manageBillingForm.addEventListener("submit", function (e) {
     e.preventDefault();
