@@ -13,6 +13,7 @@ const envFilePath = path.resolve(__dirname, "./.env");
 // }
 
 const stripe = require("stripe")(process.env.STRIPE_TEST_SECRET_KEY);
+// const stripe = require("stripe")(process.env.STRIPE_LIVE_SECRET_KEY);
 const staticDir = "./client";
 app.use(express.static(process.env.STATIC_DIR || staticDir));
 app.use(
