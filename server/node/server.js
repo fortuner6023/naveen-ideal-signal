@@ -57,7 +57,7 @@ app.get("/checkout-session", async (req, res) => {
 });
 
 app.post("/create-checkout-session", async (req, res) => {
-  const domainURL = process.env.DOMAIN;
+  const domainURL = process.env.DOMAIN || 'http://13.232.75.134:3000';
   const { priceId } = req.body;
 
   try {
