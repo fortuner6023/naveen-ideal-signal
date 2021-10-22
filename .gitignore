@@ -2,5 +2,5 @@
 
 # Node files
 node_modules/
-.env
+# .env
 

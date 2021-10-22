@@ -12,8 +12,8 @@ const envFilePath = path.resolve(__dirname, "./.env");
 //   );
 // }
 
-const stripe = require("stripe")(process.env.STRIPE_TEST_SECRET_KEY);
-// const stripe = require("stripe")(process.env.STRIPE_LIVE_SECRET_KEY);
+// const stripe = require("stripe")(process.env.STRIPE_TEST_SECRET_KEY);
+const stripe = require("stripe")(process.env.STRIPE_LIVE_SECRET_KEY || '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');
 const staticDir = "./client";
 app.use(express.static(process.env.STATIC_DIR || staticDir));
 app.use(
@@ -35,18 +35,17 @@ app.get("/", (req, res) => {
 
 app.get("/setup", (req, res) => {
   res.send({
-    publishableKey: process.env.STRIPE_TEST_PUBLISHABLE_KEY,
-    // publishableKey: process.env.STRIPE_LIVE_PUBLISHABLE_KEY,
+    // publishableKey: process.env.STRIPE_TEST_PUBLISHABLE_KEY,
+    publishableKey: process.env.STRIPE_LIVE_PUBLISHABLE_KEY || 'pk_live_51JNjTyA5uxwqgSmR9UODwFgmhRWFZqNYF5T806tb9QXgkxnOVIFQH52kGyqwANX3oQB2zjOi0ha8B365y1GeHGwe00rmSpsoS6',
 
-    basicMonthlyPrice: process.env.BASIC_PRICE_MONTHLY_ID,
-    premiumMonthlyPrice: process.env.PREMIUM_PRICE_MONTHLY_ID,
-    proMonthlyPrice: process.env.PRO_PRICE_MONTHLY_ID,
+    basicMonthlyPrice: process.env.BASIC_PRICE_MONTHLY_ID|| 'price_1JezDoA5uxwqgSmRSGVI6Lp7',
+    premiumMonthlyPrice: process.env.PREMIUM_PRICE_MONTHLY_ID|| 'price_1JezEHA5uxwqgSmRhFvqYvxN',
+    proMonthlyPrice: process.env.PRO_PRICE_MONTHLY_ID|| 'price_1JezESA5uxwqgSmRko2tLAPb',
 
 
-    basicYearlyPrice: process.env.BASIC_PRICE_YEARLY_ID,
-    premiumYearlyPrice: process.env.PREMIUM_PRICE_YEARLY_ID,
-    proYearlyPrice: process.env.PRO_PRICE_YEARLY_ID,
-
+    basicYearlyPrice: process.env.BASIC_PRICE_YEARLY_ID|| 'price_1JezIXA5uxwqgSmRLm0H63Dr',
+    premiumYearlyPrice: process.env.PREMIUM_PRICE_YEARLY_ID|| 'price_1JezIJA5uxwqgSmRGaSOs85N',
+    proYearlyPrice: process.env.PRO_PRICE_YEARLY_ID|| 'price_1JezHxA5uxwqgSmRxRgfxUwQ',
   });
 });
 
